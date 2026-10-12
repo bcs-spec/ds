@@ -1,0 +1,7 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.DataFrame({'Latitude':[19,20,21,22],'Longitude':[73,74,75,76],
+ 'Depth':[10,20,15,30],'Magnitude':[2,4,3,5]})
+plt.scatter(df['Longitude'],df['Latitude'],c=df['Magnitude'],s=100,cmap='Reds')
+plt.colorbar(label='Magnitude'); plt.xlabel('Longitude'); plt.ylabel('Latitude')
+plt.title('Earthquake Locations'); plt.show(
