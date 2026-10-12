@@ -1,0 +1,4 @@
+import pandas as pd
+df=pd.DataFrame({'Person_ID':[1,2,3,4,5],'Age':[15,22,35,48,60]})
+df['Age_Group']=pd.cut(df['Age'],bins=3)
+print(df)
