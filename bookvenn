@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+from wordcloud import WordCloud
+old={'Author A','Author B','Author C'}
+new={'Author B','Author C','Author D'}
+venn2([old,new],set_labels=('Older Books','Newer Books')); plt.show()
+titles='Python Data Science Machine Learning AI Python Books'
+plt.imshow(WordCloud(background_color='white').generate(titles))
+plt.axis('off'); plt.show(
