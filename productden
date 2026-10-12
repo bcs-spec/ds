@@ -1,0 +1,10 @@
+Q1. Product Dendrogram
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import dendrogram, linkage
+df = pd.DataFrame({'Price':[100,200,150,500,450],
+ 'Rating':[4,5,3,5,4], 'Sales':[10,20,15,50,45]})
+Z = linkage(df, method='ward')
+dendrogram(Z)
+plt.title('Product Dendrogram'); plt.xlabel('Products'); plt.ylabel('Distance')
+plt.show(
