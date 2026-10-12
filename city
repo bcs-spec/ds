@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import squarify
+df=pd.read_csv('worldcities.csv').dropna(subset=['lat','lng','population'])
+plt.scatter(df['lng'],df['lat'],s=df['population']/100000,alpha=.5)
+plt.xlabel('Longitude'); plt.ylabel('Latitude'); plt.title('World Cities'); plt.show()
+d=df.nlargest(20,'population')
+squarify.plot(sizes=d['population'],label=d['city'])
+plt.axis('off'); plt.title('Population Treemap'); plt.show()
