@@ -1,0 +1,6 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.DataFrame({'Fuel_Efficiency':[20,22,21,19,80],
+ 'Engine_Power':[100,120,110,115,400]})
+df[['Fuel_Efficiency','Engine_Power']].plot.box()
+plt.title('Vehicle Outliers'); plt.show()
