@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+df=pd.read_csv('Ecommerce Customers.csv')
+X=df.select_dtypes(include='number').dropna()
+Xs=StandardScaler().fit_transform(X)
+m=KMeans(n_clusters=3,random_state=1,n_init=10)
+labels=m.fit_predict(Xs)
+plt.scatter(Xs[:,0],Xs[:,1],c=labels); plt.title('Customer Clusters'); plt.show()
+print(labels)
