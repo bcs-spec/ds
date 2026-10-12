@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+df=pd.read_csv('collegiate_athlete_injury_dataset.csv').dropna()
+X=df[['Training Hours Per Week']]; y=df['Performance Score']
+m=LinearRegression().fit(X,y); p=m.predict(X)
+print('R2:',r2_score(y,p))
+plt.scatter(X,y); plt.plot(X,p,color='red'); plt.show()
