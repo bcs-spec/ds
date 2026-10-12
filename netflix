@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+netflix={'A','B','C','D'}; prime={'C','D','E','F'}
+venn2([netflix,prime],set_labels=('Netflix','Amazon Prime')); plt.show()
+vals=[len(netflix-prime),len(prime-netflix),len(netflix&prime)]
+plt.pie(vals,labels=['Netflix Only','Prime Only','Both'],autopct='%1.1f%%')
+plt.show()
