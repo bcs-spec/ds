@@ -1,0 +1,4 @@
+import pandas as pd
+student_details=pd.DataFrame({'Student_ID':[1,2,3],'Name':['Amit','Ravi','Neha']})
+academic_records=pd.DataFrame({'Student_ID':[1,2,3],'Marks':[80,75,90]})
+print(pd.merge(student_details,academic_records,on='Student_ID'))
