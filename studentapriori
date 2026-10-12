@@ -1,0 +1,10 @@
+import pandas as pd
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import apriori,association_rules
+T=[['Library','Seminar'],['Workshop','Project'],['Library','Assignment'],
+['Seminar','Workshop'],['Assignment','Seminar'],['Workshop','Assignment'],
+['Project','Library'],['Library','Seminar','Project'],['Library','Seminar','Workshop']]
+te=TransactionEncoder(); a=te.fit(T).transform(T); df=pd.DataFrame(a,columns=te.columns_)
+for s in [.2,.3]:
+ f=apriori(df,min_support=s,use_colnames=True); print(f)
+ if len(f): print(association_rules(f,metric='confidence',min_threshold=.5))
