@@ -1,0 +1,5 @@
+import pandas as pd
+from sklearn.preprocessing import Normalizer
+df=pd.DataFrame({'House_Area':[500,800,1000],'Number_of_Rooms':[2,3,4],
+ 'Monthly_Rent':[5000,8000,10000]})
+print(Normalizer().fit_transform(df))
