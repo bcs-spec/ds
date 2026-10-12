@@ -1,0 +1,5 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv('sales.csv')
+df.select_dtypes('number').plot.box()
+plt.title('Daily Sales Outliers'); plt.show()
