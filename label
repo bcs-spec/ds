@@ -1,0 +1,10 @@
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+df=pd.DataFrame({'Customer_ID':[1,2,3,4],
+ 'Gender':['Male','Female','Male','Female'],
+ 'City':['Pune','Mumbai','Nashik','Pune'],
+ 'Membership_Type':['Gold','Silver','Gold','Bronze']})
+print(df)
+for c in ['Gender','City','Membership_Type']:
+ df[c]=LabelEncoder().fit_transform(df[c])
+print(df)
