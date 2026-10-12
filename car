@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.DataFrame({'Car':['A','B','C','D','E'],
+ 'Engine_Size':[1,1.5,2,2.5,3],'Fuel_Efficiency':[22,20,17,14,12]})
+plt.scatter(df['Engine_Size'],df['Fuel_Efficiency'],c='blue')
+plt.xlabel('Engine Size'); plt.ylabel('Fuel Efficiency')
+plt.title('Engine Size vs Fuel Efficiency'); plt.show()
+
+  
